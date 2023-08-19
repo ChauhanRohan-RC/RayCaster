@@ -10,7 +10,7 @@ import java.util.*;
  * */
 public class Player {
 
-    public static final int DEFAULT_RAYS_COUNT = 1920;
+    public static final int DEFAULT_RAYS_COUNT = 2000;
 
     public static final float DEFAULT_H_FOV = RMath.rad(90);
     public static final float DEFAULT_V_FOV = RMath.rad(100);

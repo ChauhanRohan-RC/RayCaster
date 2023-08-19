@@ -1,32 +1,65 @@
-.............................................   RAY CASTER  (RC @June 12, 2022) .........................................
+# 3D Ray Caster Engine
 
-# A modular 3D Ray Casting Engine
+#### A 3D ray caster engine made from scratch in java
 
-1. Efficient Ray Tracking Algorithm with native Vector calculations and Collision detection
-2. Resizable window and Minimap
-3. Player movement and camera support
+#### [View Demo on YouTube](https://youtu.be/csJf_iHPrm0)
 
-# Demo
+###### See also
+[Ping Pong Online Multiplayer](https://github.com/ChauhanRohan-RC/Ping-Pong-AI.git)  
+[3D N*N Rubik's Cube solver-AI](https://github.com/ChauhanRohan-RC/Cube.git)  
+[Fourier Series Simulation](https://github.com/ChauhanRohan-RC/Fourier-Series.git)  
 
-1. Ray Casting Rendering (WolfStein 3D): https://www.youtube.com/watch?v=eOCQfxRQ2pY
-2. Demo: https://www.youtube.com/watch?v=igKRMz--BuM
 
-# Usage
+![Cover](graphics/thumb.png)
 
-1. Install Java on your computer and add it to the path
-2. Copy folder "out\artifacts\RayCaster_jar" to your computer
-2. click "launch.bat"
+## Features
+* Efficient Ray Tracking Algorithm with native Vector calculations and Collision mesh detection
+* Real time player and 3D camera motion
+* Includes Minimap that displays 
+  * Walls and Boundaries
+  * Position of the player i.e rays source
+  * Rays emitting from the player
+  * Heading and collision mesh of each rays
+* Fog effect : walls become foggy at large distances
+* Corrected fish-eye effect
+* Player heading directed motion controls
 
-# Controls
+![](graphics/fog_low.png)
 
-1. W: Move Forward
-2. S: Move Backward
-3. A: Move Left
-4. D: Move Right
+## Controls
+* Player controls
+  * `W` : Move Forward
+  * `A` : Move Left
+  * `S` : Move Backward
+  * `D` : Move Right
+#####
+* Camera Controls
+  * `UP` : Camera Up
+  * `DOWN` : Camera Down
+  * `LEFT` : Camera Left
+  * `RIGHT` : Camera Right
+#####
+* Scene Controls
+  * `CTRL-R` : Change Scene
 
-5. UP: Camera Up
-6. DOWN: Camera Down
-7. LEFT: Camera Left
-8. RIGHT: Camera Right
+![](graphics/camera_down.png)
 
-9. CTRL-R: Change Scene
+## Usage
+Requires Java 14 or higher
+* Install [Java](https://www.oracle.com/in/java/technologies/downloads/) on your computer and add it to the path
+* Clone this repository  
+  `git clone https://github.com/ChauhanRohan-RC/RayCaster.git`
+* Navigate to [RayCaster_jar](out/artifacts/RayCaster_jar) folder and run [launch.bat](out/artifacts/RayCaster_jar/launch.bat).  
+  Alternatively, open up the terminal and run `java -jar RayCaster.jar`
+
+![](graphics/far.png)
+
+## Connect on
+
+[GitHub](https://github.com/ChauhanRohan-RC)  
+[Twitter](https://twitter.com/0rc_studio)  
+[Youtube](https://www.youtube.com/channel/UCmyvutGWtyBRva_jrZfyORA)  
+[Google Play Store](https://play.google.com/store/apps/dev?id=7315303590538030232)  
+E-mail: com.production.rc@gmail.com
+
+![](graphics/camera_up.png)

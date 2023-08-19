@@ -65,7 +65,7 @@ public interface WallI {
             }
 
             if (!isRigid()) {
-                c = Gl.withAlpha(c, Gl.MINIMAP_NON_RIGID_WALL_ALPHA);
+                c = ColorU.withAlpha(c, Gl.MINIMAP_NON_RIGID_WALL_ALPHA);
             }
 
             p.fill(c.getRGB());
@@ -82,7 +82,7 @@ public interface WallI {
             }
 
             if (!isRigid()) {
-                c = Gl.withAlpha(c, Gl.MINIMAP_NON_RIGID_WALL_ALPHA);
+                c = ColorU.withAlpha(c, Gl.MINIMAP_NON_RIGID_WALL_ALPHA);
             }
 
             p.stroke(c.getRGB());

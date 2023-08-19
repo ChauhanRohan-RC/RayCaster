@@ -13,6 +13,8 @@ import java.util.List;
 
 public class Main extends PApplet {
 
+    public static final boolean FULLSCREEN = false;      // fullscreen not working with P2D renderer
+
     public static final float RAY_MAX_DISTANCE_FACTOR = 0f;     // <=0  for infinite long rays (relative to ray distance)
     public static final float RENDER_DISTANCE_FACTOR = RAY_MAX_DISTANCE_FACTOR > 0? RAY_MAX_DISTANCE_FACTOR * 2: 1.5f;        // (relative to ray distance)
 
@@ -71,10 +73,14 @@ public class Main extends PApplet {
 
     @Override
     public void settings() {
-        final Dimension s = windowSize(displayWidth, displayHeight);
-        size(s.width, s.height, P2D);
-        _w = width; _h = height;
+        if (FULLSCREEN) {
+            fullScreen(P2D);
+        } else {
+            final Dimension s = windowSize(displayWidth, displayHeight);
+            size(s.width, s.height, P2D);
+        }
 
+        _w = width; _h = height;
         smooth(4);
     }
 
@@ -82,7 +88,7 @@ public class Main extends PApplet {
     public void setup() {
         surface.setTitle("RayCaster");
         surface.setResizable(true);
-        surface.hideCursor();
+//        surface.hideCursor();
 //        surface.setLocation(0, 0);
 //        surface.setSize(displayWidth, displayHeight);
 //        frameRate(120);
@@ -119,7 +125,7 @@ public class Main extends PApplet {
 
     @NotNull
     public Vector miniMapOrigin(@NotNull SizeF miniMapSize) {
-        return new Vector(0, height - miniMapSize.height);
+        return new Vector(width - miniMapSize.width - 5, 5);
     }
 
 
@@ -340,8 +346,8 @@ public class Main extends PApplet {
             float scaledColH = colH * wallH;
             float y = centerY + (colH - scaledColH);
 
-            // drawing wall
-            fill(Gl.DEFAULT_COLOR_WALLS.getRGB());      // todo texture
+            // drawing wall. TODO texture
+            fill(ColorU.withLuminance(Gl.DEFAULT_COLOR_WALLS.getRGB(), abs(colH / height)));
             rect(curColumn, y, colW, scaledColH);
 
             // Overlay with fog effect

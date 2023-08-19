@@ -6,15 +6,6 @@ import java.awt.*;
 
 public class Gl {
 
-    public static int withAlpha(int rgb, int alpha /* [0-255] */) {
-        return ((alpha & 0xFF) << 24) | (rgb & 0xFFFFFF);
-    }
-
-    @NotNull
-    public static Color withAlpha(@NotNull Color c, int alpha /* [0-255] */) {
-        return new Color(withAlpha(c.getRGB(), alpha), true);
-    }
-
     @NotNull
     public static PointF abs(@NotNull PointF pt, float width, float height) {
         return new PointF(pt.x * width, pt.y * height);
@@ -55,12 +46,12 @@ public class Gl {
     public static final Color MINIMAP_FG_MEDIUM = new Color(227, 227, 227);
     public static final Color MINIMAP_FG_LIGHT = new Color(200, 200, 200);
 
-    public static final Color COLOR_SKY = new Color(73, 255, 255);
-    public static final Color COLOR_GROUND = new Color(106, 255, 73);
-    public static final Color DEFAULT_COLOR_WALLS = new Color(255, 73, 152);
+    public static final Color COLOR_SKY = new Color(135, 206, 235);
+    public static final Color COLOR_GROUND = new Color(157, 91, 58);
+    public static final Color DEFAULT_COLOR_WALLS = new Color(194, 93, 218);
 
     public static Color fogColor(int alpha /* [0, 255] */) {
-        return withAlpha(COLOR_SKY, alpha);
+        return ColorU.withAlpha(COLOR_SKY, alpha);
     }
 
     public static Color fogColor(float fogLevel /* [0, 1] */) {
@@ -71,7 +62,7 @@ public class Gl {
     public static final Color MINIMAP_DEFAULT_WALL_STROKE = MINIMAP_FG_DARK;
 
     public static final Color MINIMAP_DEFAULT_PLAYER_COLOR = MINIMAP_FG_DARK;
-    public static final Color MINIMAP_DEFAULT_RAY_COLOR = withAlpha(MINIMAP_FG_LIGHT, 170);
+    public static final Color MINIMAP_DEFAULT_RAY_COLOR = ColorU.withAlpha(MINIMAP_FG_LIGHT, 170);
     public static final Color MINIMAP_DEFAULT_INTERSECTION_POINT_COLOR = MINIMAP_FG_DARK;
 
 }
